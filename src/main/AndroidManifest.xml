@@ -1,0 +1,13 @@
+<<<<<<< Original<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.example.capri.mvprecyclermoxy.blank.MiscListActivity" />
+</application>
+</manifest>
+
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.example.capri.mvprecyclermoxy.ui.activity.blank.details.DetailsActivity" />
+</application>
+</manifest>>>>>>>> Added
