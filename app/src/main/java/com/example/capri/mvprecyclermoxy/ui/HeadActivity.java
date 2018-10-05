@@ -12,11 +12,9 @@ import com.example.capri.mvprecyclermoxy.R;
 import com.example.capri.mvprecyclermoxy.model.Item;
 import com.example.capri.mvprecyclermoxy.presentation.presenter.HeadPresenter;
 import com.example.capri.mvprecyclermoxy.presentation.view.HeadView;
-import java.util.List;
 
 public class HeadActivity extends MvpActivity implements HeadView {
 
-    public static final String TAG = "HeadActivity";
     @InjectPresenter
     HeadPresenter headPresenter;
     RecyclerView recyclerView;
@@ -32,11 +30,7 @@ public class HeadActivity extends MvpActivity implements HeadView {
         recyclerView = findViewById(R.id.list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-    }
-
-    @Override
-    public void onItemsLoaded(List<Item> items) {
-        RecyclerAdapter adapter = new RecyclerAdapter(items);
+        RecyclerAdapter adapter = new RecyclerAdapter(headPresenter.loadItemsList());
         recyclerView.setAdapter(adapter);
     }
 

@@ -1,9 +1,11 @@
 package com.example.capri.mvprecyclermoxy.presentation.presenter;
 
 import com.example.capri.mvprecyclermoxy.model.Data;
+import com.example.capri.mvprecyclermoxy.model.Item;
 import com.example.capri.mvprecyclermoxy.presentation.view.HeadView;
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+import java.util.List;
 
 @InjectViewState
 public class HeadPresenter extends MvpPresenter<HeadView> {
@@ -14,13 +16,7 @@ public class HeadPresenter extends MvpPresenter<HeadView> {
         this.data = new Data();
     }
 
-    @Override
-    protected void onFirstViewAttach() {
-        super.onFirstViewAttach();
-        loadItemsList();
-    }
-
-    private void loadItemsList() {
-        getViewState().onItemsLoaded(data.createItemsList());
+    public List<Item> loadItemsList() {
+        return (data.createItemsList());
     }
 }

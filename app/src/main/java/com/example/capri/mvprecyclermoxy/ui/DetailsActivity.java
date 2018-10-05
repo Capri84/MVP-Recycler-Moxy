@@ -12,7 +12,6 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 
 public class DetailsActivity extends MvpActivity implements DetailsView {
 
-    public static final String TAG = "DetailsActivity";
     @InjectPresenter
     DetailsPresenter detailsPresenter;
     private TextView title;
