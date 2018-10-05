@@ -7,19 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.example.capri.mvprecyclermoxy.R;
 import com.example.capri.mvprecyclermoxy.model.Item;
-import com.example.capri.mvprecyclermoxy.presentation.presenter.HeadPresenter;
 
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private List<Item> items;
-    @InjectPresenter
-    HeadPresenter headPresenter;
 
     public RecyclerAdapter(List<Item> items) {
         this.items = items;
@@ -41,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                headPresenter.startDetailsActivity(currentItem);
+                HeadActivity.startDetailsActivity(currentItem);
             }
         });
     }

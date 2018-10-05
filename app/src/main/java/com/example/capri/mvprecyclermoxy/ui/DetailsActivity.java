@@ -17,13 +17,20 @@ public class DetailsActivity extends MvpActivity implements DetailsView {
     DetailsPresenter detailsPresenter;
     private TextView title;
     private ImageView picture;
+    Item currentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        Item currentItem = getIntent().getParcelableExtra(Item.class.getSimpleName());
+        init();
         detailsPresenter.showItem(currentItem);
+    }
+
+    private void init() {
+        title = findViewById(R.id.current_title);
+        picture = findViewById(R.id.current_image);
+        currentItem = getIntent().getParcelableExtra(Item.class.getSimpleName());
     }
 
     @Override

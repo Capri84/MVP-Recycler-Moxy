@@ -1,11 +1,13 @@
 package com.example.capri.mvprecyclermoxy.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import com.arellomobile.mvp.MvpActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.example.capri.mvprecyclermoxy.App;
 import com.example.capri.mvprecyclermoxy.R;
 import com.example.capri.mvprecyclermoxy.model.Item;
 import com.example.capri.mvprecyclermoxy.presentation.presenter.HeadPresenter;
@@ -38,10 +40,10 @@ public class HeadActivity extends MvpActivity implements HeadView {
         recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public void startDetailsActivity(Item currentItem) {
-        Intent intent = new Intent(this, DetailsActivity.class);
+    public static void startDetailsActivity(Item currentItem) {
+        Context context = App.getContext();
+        Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra(Item.class.getSimpleName(), currentItem);
-        startActivity(intent);
+        context.startActivity(intent);
     }
 }

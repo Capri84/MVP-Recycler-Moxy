@@ -2,10 +2,8 @@ package com.example.capri.mvprecyclermoxy.presentation.presenter;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.example.capri.mvprecyclermoxy.model.Data;
 import com.example.capri.mvprecyclermoxy.model.Item;
 import com.example.capri.mvprecyclermoxy.presentation.view.DetailsView;
-import com.example.capri.mvprecyclermoxy.ui.RecyclerAdapter;
 
 @InjectViewState
 public class DetailsPresenter extends MvpPresenter<DetailsView> {

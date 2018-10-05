@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface HeadView extends MvpView {
     void onItemsLoaded(List<Item> items);
-    void startDetailsActivity(Item currentItem);
 }
