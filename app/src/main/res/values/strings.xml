@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MVP recycler moxy</string>
+    <string name="please_wait">Please wait…</string>
     <string-array name="picture_names">
         <item>Charm 1</item>
         <item>Charm 2</item>
